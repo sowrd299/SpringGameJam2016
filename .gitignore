@@ -1,0 +1,7 @@
+GhostProject/Temp/
+GhostProject/Library/
+GhostProject/.vs/
+
+*.sln
+*.csproj
+*.meta
