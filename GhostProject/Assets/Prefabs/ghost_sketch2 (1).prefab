@@ -8,16 +8,17 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 479702}
+  - 212: {fileID: 21285436}
+  - 95: {fileID: 9576684}
   - 114: {fileID: 11432454}
   - 50: {fileID: 5046986}
   - 58: {fileID: 5806234}
-  - 114: {fileID: 11432670}
-  - 114: {fileID: 11489000}
-  - 114: {fileID: 11411230}
-  - 212: {fileID: 21237532}
+  - 114: {fileID: 11484076}
+  - 114: {fileID: 11446418}
+  - 114: {fileID: 11449166}
   m_Layer: 0
   m_Name: ghost_sketch2 (1)
-  m_TagString: Ghost
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,18 +66,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.3540068
---- !u!114 &11411230
-MonoBehaviour:
+--- !u!95 &9576684
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118036}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828b5cfc26a078749b53be6d2f2754c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lm: {fileID: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6ac4d3c6a7b0804d9e928bf13ebd2c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11432454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,10 +91,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 118036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dc634458de5e943b16877d95ac7f32, type: 3}
+  m_Script: {fileID: 11500000, guid: e5e078b960f6cd248ba784d8ac603106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11432670
+--- !u!114 &11446418
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,24 +102,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 118036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebecb9fabb05fb64eb1721b09f2add5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 60c1ec0a0b453204fa460922c646e9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11449166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c43946a58c90a41b92dca5f68e0ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lm: {fileID: 0}
+--- !u!114 &11484076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8367fefcc28d045ab44bf564529f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maskType: 0
   showProjectedBounds: 0
   delayInMilliseconds: 0
---- !u!114 &11489000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7d233e077faa84799a5bb2e72a7367, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &21237532
+--- !u!212 &21285436
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -139,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d42cd8393ed4bc04bae1359f5ebec42c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fbbc2946a57a764409bb5dcca8420fd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,16 +167,7 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d42cd8393ed4bc04bae1359f5ebec42c,
-        type: 3}
-    - target: {fileID: 0}
-      propertyPath: m_TagString
-      value: Ghost
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118036}
