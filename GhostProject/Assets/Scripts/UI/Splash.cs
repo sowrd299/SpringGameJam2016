@@ -41,7 +41,7 @@ public class Splash : MonoBehaviour {
         Debug.Log("Splash elemenents are " + image.gameObject.activeSelf.ToString() + "," + text.gameObject.activeSelf.ToString());
     }
 
-    void Update() {
+    public void Update() {
         if (current != null) {
             Debug.Log("Running the splash");
             size += (endSize - startSize) / steps;
@@ -49,7 +49,7 @@ public class Splash : MonoBehaviour {
             Color c = color;
             c.a = alpha;
             current.color = c;
-            Debug.Log(current.color.a);
+            Debug.Log("Alpha  is "+current.color.a);
             current.rectTransform.localScale = new Vector3(size, size, size);
             Debug.Log(text.rectTransform.localScale.x);
             if(Math.Sign(alpha-endAlpha) != Math.Sign(startAlpha-endAlpha) ||

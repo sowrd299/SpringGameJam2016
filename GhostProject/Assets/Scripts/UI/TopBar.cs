@@ -21,9 +21,9 @@ public class TopBar : MonoBehaviour {
         MyUnityTools.dflt(ref scoreText, "ScoreText");
         MyUnityTools.dflt(ref typeIcon, "TypeIcon");
         MyUnityTools.dflt(ref timerText, "TimerText");
-        MyUnityTools.dflt(ref splash, "Splash");
         MyUnityTools.dflt(ref gameOver, "GameOver");
         MyUnityTools.dflt(ref goScoreText, "GO_ScoreText");
+        MyUnityTools.dflt(ref splash, "Splash");
     }
 
     public void setColor(Color c) {
