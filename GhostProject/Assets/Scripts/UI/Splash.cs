@@ -21,7 +21,6 @@ public class Splash : MonoBehaviour {
 
     private Color color;
 
-    void Start() {
     void Awake() {
         
         //ignor that this is in Dutch...

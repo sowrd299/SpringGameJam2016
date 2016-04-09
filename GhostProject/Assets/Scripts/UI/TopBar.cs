@@ -13,7 +13,6 @@ public class TopBar : MonoBehaviour {
     public Transform gameOver;
     public Text goScoreText; //GameOver...
 
-    void Start() {
     void Awake() {
         Debug.Log("Het is wel aan het starten!");
         //initialize the elements array
@@ -23,9 +22,8 @@ public class TopBar : MonoBehaviour {
         MyUnityTools.dflt(ref typeIcon, "TypeIcon");
         MyUnityTools.dflt(ref timerText, "TimerText");
         MyUnityTools.dflt(ref splash, "Splash");
-        setColor(startColor); //testing
-        setScore(1); //testing? maybe keep?
-        setTimer(1, true); //testing
+        MyUnityTools.dflt(ref gameOver, "GameOver");
+        MyUnityTools.dflt(ref goScoreText, "GO_ScoreText");
     }
 
     public void setColor(Color c) {
