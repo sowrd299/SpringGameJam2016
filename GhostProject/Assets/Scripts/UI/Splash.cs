@@ -15,7 +15,7 @@ public class Splash : MonoBehaviour {
     public float endSize = 2f;
     private float size;
 
-    public float startAlpha = 128f;
+    public float startAlpha = 50f;
     public float endAlpha = 0f;
     private float alpha;
 
@@ -29,9 +29,11 @@ public class Splash : MonoBehaviour {
         //defaults for variables
         MyUnityTools.dflt(ref text, "SplashText");
         MyUnityTools.dflt(ref image, "SplashImage");
+    /*
     }
 
     void Start(){
+    */
         //become invisible
         Debug.Log("Turning splash elements off.");
         image.gameObject.SetActive(false);

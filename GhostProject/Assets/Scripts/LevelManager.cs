@@ -25,12 +25,12 @@ public class LevelManager : MonoBehaviour {
         get { return baseNumTypes - 2 + score/25; }
     }
     public static readonly Color[] typeColors = new Color[baseNumTypes]
-            {new Color(248/2.55f,255/2.55f,49/2.55f), //mint
-             new Color(49/2.55f,246/2.55f,255/2.55f), //cyan
-             new Color(255/2.55f,11/2.55f,188/2.55f), //magenta
-             new Color(11/2.55f,255/2.55f,78/2.55f), //yellow
-             new Color(89/2.55f,49/2.55f,246/2.55f), //purple
-             new Color(255/2.55f,162/2.55f,56/2.55f) }; //peach
+            {new Color(248/255f,255/255f,49/255f), //mint
+             new Color(49/255f,246/255f,255/255f), //cyan
+             new Color(255/255f,11/255f,188/255f), //magenta
+             new Color(11/255f,255/255f,78/255f), //yellow
+             new Color(89/255f,49/255f,246/255f), //purple
+             new Color(255/255f,162/255f,56/255f) }; //peach
     private int targetType; //stores the target type as int
 
     //LEVEL BOUNDS
