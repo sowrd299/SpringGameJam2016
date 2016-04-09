@@ -13,7 +13,8 @@ public class TopBar : MonoBehaviour {
     public Transform gameOver;
     public Text goScoreText; //GameOver...
 
-    void Start() {
+    void Awake() {
+        Debug.Log("Het is wel aan het starten!");
         //initialize the elements array
         elements = GetComponentsInChildren<Graphic>();
         //initize special elemets; its repeat code I know, its a gamejam get off my back
@@ -21,15 +22,13 @@ public class TopBar : MonoBehaviour {
         MyUnityTools.dflt(ref typeIcon, "TypeIcon");
         MyUnityTools.dflt(ref timerText, "TimerText");
         MyUnityTools.dflt(ref splash, "Splash");
-        setColor(startColor); //testing
-        setScore(1); //testing? maybe keep?
-        setTimer(1, true); //testing
     }
 
     public void setColor(Color c) {
         /*
         sets the color of all top-bar gui elements
         */
+        Debug.Log("Changing color for " + elements.Length + " elements.");
         foreach(Graphic g in elements) {
             g.color = c;
         }

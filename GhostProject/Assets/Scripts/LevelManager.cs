@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour {
     public int startingGhosts; //number of ghosts to start with
     public GameObject ghostPrefab; //public for unity; do not access
 
-    private TopBar hud;
+    public TopBar hud;
 
     //SCORE
     private int score = 0;
@@ -25,12 +25,12 @@ public class LevelManager : MonoBehaviour {
         get { return baseNumTypes - 2 + score/25; }
     }
     public static readonly Color[] typeColors = new Color[baseNumTypes]
-            {new Color(248,255,49), //mint
-             new Color(49,246,255), //cyan
-             new Color(255,11,188), //magenta
-             new Color(11,255,78), //yellow
-             new Color(89,49,246), //purple
-             new Color(255,162,56) }; //peach
+            {new Color(248/2.55f,255/2.55f,49/2.55f), //mint
+             new Color(49/2.55f,246/2.55f,255/2.55f), //cyan
+             new Color(255/2.55f,11/2.55f,188/2.55f), //magenta
+             new Color(11/2.55f,255/2.55f,78/2.55f), //yellow
+             new Color(89/2.55f,49/2.55f,246/2.55f), //purple
+             new Color(255/2.55f,162/2.55f,56/2.55f) }; //peach
     private int targetType; //stores the target type as int
 
     //LEVEL BOUNDS
@@ -72,9 +72,11 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Debug.Log("Het is wel aan het starten!");
         spawnGhosts(startingGhosts);
         MyUnityTools.dflt(ref hud, "TopBar");
         reset();
+        Debug.Log("Het is nog steds aan het starten!");
 	}
 	
 	// Update is called once per frame
@@ -102,12 +104,14 @@ public class LevelManager : MonoBehaviour {
         do {
             targetType = Random.Range(0, NumTypes);
         } while (targetType == this.targetType);
+        Debug.Log("Target type is: "+targetType.ToString());
         this.targetType = targetType;
         dispType(targetType);
     }
     
     private void dispType(int t) {
         //display type-relevent information to the hud
+        Debug.Log("Displaying type " + t.ToString());
         hud.setColor(typeColors[t]);
         //hud.setTypeIcon(typeIcons[t]);
     }
