@@ -49,8 +49,10 @@ public class TopBar : MonoBehaviour {
         sets the time displayed
         if splash, also splashes to screen
         */
-        timerText.text = t.ToString() + "s";
-        if(t <= 3) {
+        string text = t.ToString() + "s";
+        if (timerText.text == text) return;
+        timerText.text = text;
+        if(t <= 3 && splash ) {
             this.splash.splash(t.ToString(),timerText.color);
         }
     }
