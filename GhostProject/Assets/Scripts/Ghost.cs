@@ -7,13 +7,14 @@ public class Ghost : MonoBehaviour {
     manages gameplaty elements of ghosts
     */
 
+    public LevelManager lm;
     protected const int defPointsValue = 5; //default points value
 
     private int type;
     public int Type {
         get { return type;  }
         set {
-            if(value < LevelManager.NumTypes) {
+            if(value < lm.NumTypes) {
                 type = value;
             } else {
                 //if the type does not exist, raise an exception
@@ -32,11 +33,20 @@ public class Ghost : MonoBehaviour {
     }
 
     public void init(int type, Vector2 minPos, Vector2 maxPos) {
+        MyUnityTools.dflt(ref lm, "LevelController");
         //pseudo-constructor
         //initialize a newly spawned ghost from script
         Type = type;
         transform.position = new Vector2(UnityEngine.Random.Range(minPos.x,maxPos.x),
                                          UnityEngine.Random.Range(minPos.y,maxPos.y));
+    }
+
+    public void select() {
+        /*
+        what happens when the ghost gets booped
+        */
+        lm.selectGhost(this);
+        destroy();
     }
 
     public void destroy() {

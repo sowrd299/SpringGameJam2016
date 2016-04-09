@@ -10,6 +10,8 @@ public class TopBar : MonoBehaviour {
     public Text timerText;
     public Image typeIcon; 
     public Splash splash;
+    public Transform gameOver;
+    public Text goScoreText; //GameOver...
 
     void Start() {
         //initialize the elements array
@@ -67,6 +69,14 @@ public class TopBar : MonoBehaviour {
             str = str.PadLeft(3, '0');
         }
         scoreText.text = str;
+    }
+
+    public void endGame(int score) {
+        //note: is self-destructive. normal functionality not intended to be resumed.
+        gameObject.SetActive(false);
+        scoreText = goScoreText;
+        setScore(score);
+        gameOver.gameObject.SetActive(true);
     }
 
 }
