@@ -22,15 +22,22 @@ public class Splash : MonoBehaviour {
     private Color color;
 
     void Start() {
+    void Awake() {
+        
+        //ignor that this is in Dutch...
+        Debug.Log("Het is wel aan het starten!");
 
         //defaults for variables
         MyUnityTools.dflt(ref text, "SplashText");
         MyUnityTools.dflt(ref image, "SplashImage");
+    }
 
+    void Start(){
         //become invisible
+        Debug.Log("Turning splash elements off.");
         image.gameObject.SetActive(false);
         text.gameObject.SetActive(false);
-
+        Debug.Log("Splash elemenents are " + image.gameObject.activeSelf.ToString() + "," + text.gameObject.activeSelf.ToString());
     }
 
     void Update() {

@@ -16,6 +16,7 @@ static class MyUnityTools {
         Usage:
             public type varName;
             void Start(){
+            void Awake(){
                 MyUnityTools.dflt(ref varName, "ObjectName");
             }
         */
