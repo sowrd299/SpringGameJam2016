@@ -74,6 +74,7 @@ public class TopBar : MonoBehaviour {
     public void endGame(int score) {
         //note: is self-destructive. normal functionality not intended to be resumed.
         gameObject.SetActive(false);
+        splash.gameObject.SetActive(false);
         scoreText = goScoreText;
         setScore(score);
         gameOver.gameObject.SetActive(true);
