@@ -17,5 +17,6 @@ public class GazeHider : MonoBehaviour {
 
 	void Update () {
         gameObject.SetActive(host.EyeTrackingDeviceStatus != EyeXDeviceStatus.Tracking || trigger.HasGaze);
+        if (gameObject.activeSelf) Debug.Log("Showing!");
 	}
 }
