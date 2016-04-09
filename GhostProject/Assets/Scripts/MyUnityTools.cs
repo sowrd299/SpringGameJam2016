@@ -11,7 +11,13 @@ static class MyUnityTools {
 
     public static void dflt<T>(ref T obj, string name) {
         /*
-        sets the default value for var obj as the component of class T of game object name
+        sets the default value for var obj as the component of class T on the Game Object named name
+        default value is used when no value is given in the unity editor, not used when one it
+        Usage:
+            public type varName;
+            void Start(){
+                MyUnityTools.dflt(ref varName, "ObjectName");
+            }
         */
         if (obj != null) return;
         GameObject go = GameObject.Find(name);
