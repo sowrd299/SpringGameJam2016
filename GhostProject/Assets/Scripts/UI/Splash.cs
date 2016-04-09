@@ -8,14 +8,15 @@ public class Splash : MonoBehaviour {
     public Image image; //public for unity; do not access
     private Graphic current;
 
-    private const int steps = 15;
+    //public for unity; do not access
+    public int steps = 15;
 
-    private const float startSize = 1f;
-    private const float endSize = 2f;
+    public float startSize = 1f;
+    public float endSize = 2f;
     private float size;
 
-    private const float startAlpha = 128f;
-    private const float endAlpha = 0f;
+    public float startAlpha = 128f;
+    public float endAlpha = 0f;
     private float alpha;
 
     private Color color;
