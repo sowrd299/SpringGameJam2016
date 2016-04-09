@@ -35,10 +35,10 @@ public class LevelManager : MonoBehaviour {
 
     //LEVEL BOUNDS
     public Vector2 LevelMin {
-        get { return (Vector2)Camera.main.transform.position - new Vector2(Screen.width/2, Screen.height/2); }
+        get { return ((Vector2)Camera.main.transform.position - new Vector2(Screen.width/2, Screen.height/2))/100; }
     }
     public Vector2 LevelMax {
-        get { return LevelMin + new Vector2(Screen.width, Screen.height); }
+        get { return LevelMin + new Vector2(Screen.width, Screen.height)/100; }
     }
 
     void spawnGhosts(int num) {
@@ -119,6 +119,7 @@ public class LevelManager : MonoBehaviour {
             go.GetComponent<Ghost>().destroy();
         }
         hud.endGame(score);
+        gameObject.SetActive(false);
     }
 
 
