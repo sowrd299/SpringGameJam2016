@@ -50,7 +50,11 @@ public class Ghost : MonoBehaviour {
         /*
         what happens when the ghost gets booped
         */
-        if(lm.selectGhost(this)) destroy();
+        if (lm.selectGhost(this))
+        {
+            gameObject.GetComponent<GhostZone>().fading = true;
+            Invoke("destroy", 1);
+        }
     }
 
     public void destroy() {

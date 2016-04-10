@@ -7,6 +7,8 @@ public class GhostZone : MonoBehaviour
     public static bool tobii = false;
     bool mouse = false;
 
+    public bool fading = false;
+
     protected void Awake()
     {
         MyUnityTools.dflt(ref lm, "LevelController");
@@ -16,8 +18,10 @@ public class GhostZone : MonoBehaviour
     {
         if (tobii && GetComponent<GazeAwareComponent>().HasGaze || mouse)
         {
-            //Debug.Log("Interacting with a ghost!");
             GetComponent<Animator>().Play("front");
+            Debug.Log("Interacting with a ghost!");
+            //GetComponent<Animator>().Play(GetComponent<Ghost>().Type.ToString());
+
             if (Input.GetKeyDown(KeyCode.Space)) {
                 GetComponent<Ghost>().select();
             }
@@ -26,6 +30,8 @@ public class GhostZone : MonoBehaviour
         {
             GetComponent<Animator>().Play("back");
         }
+
+        if (fading) { lerpAlpha();  }
     }
 
     void OnMouseEnter()
@@ -42,5 +48,12 @@ public class GhostZone : MonoBehaviour
         {
             mouse = false;
         }
+    }
+
+    void lerpAlpha()
+    {
+        Color temp = this.gameObject.GetComponent<Renderer>().material.color;
+        temp.a = temp.a / 1.1f;
+        this.gameObject.GetComponent<Renderer>().material.color = temp;
     }
 }
