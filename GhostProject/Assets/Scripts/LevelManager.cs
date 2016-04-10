@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour {
 
     public int startingGhosts; //number of ghosts to start with
     public GameObject ghostPrefab; //public for unity; do not access
+    public GameObject daemonGhostPrefab; //public for...blah...blah...blah...
 
     public TopBar hud;
 
@@ -19,19 +21,23 @@ public class LevelManager : MonoBehaviour {
     private float timeLeft;
 
     //TYPES
-    private const int baseNumTypes = 6; //the number of types of ghosts
+    private const int baseNumTypes = 6; //the ulitmate number of types of ghosts
     public int NumTypes {
+        //the number currenlty in play
         //increases with level
         get { return baseNumTypes - 2 + score/25; }
     }
     public static readonly Color[] typeColors = new Color[baseNumTypes]
-            {new Color(248/255f,255/255f,49/255f), //mint
-             new Color(49/255f,246/255f,255/255f), //cyan
+            {new Color(49/255f,246/255f,255/255f), //cyan
              new Color(255/255f,11/255f,188/255f), //magenta
              new Color(11/255f,255/255f,78/255f), //yellow
+             new Color(248/255f,255/255f,49/255f), //mint
              new Color(89/255f,49/255f,246/255f), //purple
              new Color(255/255f,162/255f,56/255f) }; //peach
     private int targetType; //stores the target type as int
+    public int TargetType {
+        get { return targetType; }
+    }
 
     //LEVEL BOUNDS
     public Vector2 LevelMin {
@@ -54,10 +60,29 @@ public class LevelManager : MonoBehaviour {
         /*
         spawn an individual ghost
         */
-        GameObject g = Instantiate(ghostPrefab);
+        GameObject g;
+        //chance of creating a deamon ghost slowly increases with time
+        int chance = 9 + score / 5;
+        if (chance > 20) chance = 20;
+        if (Random.Range(0,9+score/5) > 10) {
+            g = Instantiate(daemonGhostPrefab);
+        } else {
+            g = Instantiate(ghostPrefab);
+        }
         g.GetComponent<Ghost>().init(Random.Range(0,NumTypes),LevelMin,LevelMax,this);
     }
 
+    int[] presentTypes() {
+        /*
+        returns a list of all types present in the current ghosts
+        */
+        var typesFound = new HashSet<int>();
+        GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Ghost");
+        foreach(GameObject ghost in ghosts) {
+            typesFound.Add(ghost.GetComponent<Ghost>().Type);
+        }
+        return MyUnityTools.ToArray(typesFound);
+    }
 
     public bool selectGhost(Ghost g) { //to be called by the ghosts themselves
         //Check what type of ghost, if it is the correct type send it to work and add points, if it is incorrect deduct points
@@ -103,13 +128,20 @@ public class LevelManager : MonoBehaviour {
         /*
         resets for a new round
         */
-        timeLeft = baseTimeToFind - score/3; //time encroaches downward as time progress
+        //reset the time
+        timeLeft = baseTimeToFind - score / 15; //time encroaches downward as time progress
         if (timeLeft < 4f) timeLeft = 4f; //mimimum time; improve implementation 
         //generate a new random target type that is not the same one
         int targetType;
-        do {
-            targetType = Random.Range(0, NumTypes);
-        } while (targetType == this.targetType);
+        int[] legalTypes = presentTypes();
+        if (legalTypes.Length == 1) {
+            targetType = legalTypes[0];
+        } else {
+            do {
+                targetType = legalTypes[Random.Range(0, legalTypes.Length)];
+            } while (targetType == this.targetType);
+        }
+        //apply that type 
         Debug.Log("Target type is: "+targetType.ToString());
         this.targetType = targetType;
         dispType(targetType);
