@@ -6,6 +6,7 @@ public class TextArea : MonoBehaviour {
     public Transform title;
 	public Transform mainButtons;
 	public Transform credits;
+    public Transform optionButtons;
 
     void Start() {
         MyUnityTools.dflt(ref mainButtons, "MainButtons");
@@ -23,5 +24,10 @@ public class TextArea : MonoBehaviour {
 		mainButtons.gameObject.SetActive (false);
 		credits.gameObject.SetActive (true);
 	}
+
+    public void dispOptions()
+    {
+        optionButtons.gameObject.SetActive(true);
+    }
 
 }

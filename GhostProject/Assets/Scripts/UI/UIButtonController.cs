@@ -3,8 +3,15 @@ using System.Collections;
 
 public class UIButtonController : MonoBehaviour {
 
-	public void LoadLevel(int index)
+	public void LoadLevelTobii(int index)
     {
+        GhostZone.tobii = true;
+        Application.LoadLevel(index);
+    }
+
+    public void LoadLevelMouse(int index)
+    {
+        GhostZone.tobii = false;
         Application.LoadLevel(index);
     }
 }
