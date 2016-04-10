@@ -3,6 +3,7 @@
 
 public class TextArea : MonoBehaviour {
 
+    public Transform title;
 	public Transform mainButtons;
 	public Transform credits;
 
@@ -12,11 +13,13 @@ public class TextArea : MonoBehaviour {
     }
 
 	public void dispMainButtons(){
+        //title.gameObject.SetActive(true);
 		mainButtons.gameObject.SetActive (true);
 		credits.gameObject.SetActive (false);
 	}
 
 	public void dispCredits(){
+        //title.gameObject.SetActive(false);
 		mainButtons.gameObject.SetActive (false);
 		credits.gameObject.SetActive (true);
 	}

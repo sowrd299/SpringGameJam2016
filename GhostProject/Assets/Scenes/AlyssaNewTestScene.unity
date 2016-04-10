@@ -1002,8 +1002,8 @@ MonoBehaviour:
   timerText: {fileID: 0}
   typeIcon: {fileID: 0}
   splash: {fileID: 0}
-  gameOver: {fileID: 0}
-  goScoreText: {fileID: 0}
+  gameOver: {fileID: 69719958}
+  goScoreText: {fileID: 378646243}
 --- !u!1 &1334776047
 GameObject:
   m_ObjectHideFlags: 0
