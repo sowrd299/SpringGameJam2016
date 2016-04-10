@@ -4,7 +4,7 @@ public class GhostZone : MonoBehaviour
 {
 
     public LevelManager lm;
-    public static bool tobii = false;
+    public static bool tobii = true;
     bool mouse = false;
 
     protected void Awake()
@@ -17,7 +17,7 @@ public class GhostZone : MonoBehaviour
         if (tobii && GetComponent<GazeAwareComponent>().HasGaze || mouse)
         {
             Debug.Log("Interacting with a ghost!");
-            GetComponent<Animator>().Play("front");
+            GetComponent<Animator>().Play(GetComponent<Ghost>().Type.ToString());
             if (Input.GetKeyDown(KeyCode.Space)) {
                 GetComponent<Ghost>().select();
             }
