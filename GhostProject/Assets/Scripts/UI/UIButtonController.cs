@@ -6,12 +6,16 @@ public class UIButtonController : MonoBehaviour {
 	public void LoadLevelTobii(int index)
     {
         GhostZone.tobii = true;
-        Application.LoadLevel(index);
+        LoadLevel(index);
     }
 
     public void LoadLevelMouse(int index)
     {
         GhostZone.tobii = false;
+        LoadLevel(index);
+    }
+
+    public void LoadLevel(int index) {
         Application.LoadLevel(index);
     }
 }

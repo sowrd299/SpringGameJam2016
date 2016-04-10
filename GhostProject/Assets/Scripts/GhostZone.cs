@@ -17,15 +17,23 @@ public class GhostZone : MonoBehaviour
         if (tobii && GetComponent<GazeAwareComponent>().HasGaze || mouse)
         {
             Debug.Log("Interacting with a ghost!");
-            GetComponent<Animator>().Play(GetComponent<Ghost>().Type.ToString());
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                GetComponent<Ghost>().select();
-            }
+            playFront();
         }
         else
         {
-            GetComponent<Animator>().Play("back");
+            playBack();
         }
+    }
+
+    protected virtual void playFront() {
+        GetComponent<Animator>().Play(GetComponent<Ghost>().Type.ToString());
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            GetComponent<Ghost>().select();
+        }
+    }
+
+    protected virtual void playBack() {
+        GetComponent<Animator>().Play("back");
     }
 
     void OnMouseEnter()
