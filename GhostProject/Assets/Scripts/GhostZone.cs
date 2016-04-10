@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent (typeof (GazeAwareComponent))]
 public class GhostZone : MonoBehaviour
 {
 
