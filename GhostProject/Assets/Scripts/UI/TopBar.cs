@@ -32,7 +32,7 @@ public class TopBar : MonoBehaviour {
         */
         Debug.Log("Changing color for " + elements.Length + " elements.");
         foreach(Graphic g in elements) {
-            g.color = c;
+            if(g != typeIcon) g.color = c;
         }
     }
 
