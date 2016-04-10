@@ -24,7 +24,7 @@ public class Ghost : MonoBehaviour {
     }
 
     private int pointsValue = defPointsValue;
-    public int PointsValue {
+    public virtual int PointsValue {
         get { return pointsValue;  }
     }
 

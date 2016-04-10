@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour {
             scorePoints(g.PointsValue);
             pointsPopup.score(g.PointsValue, Camera.main.WorldToScreenPoint(g.transform.position), hud.timerText.color);
             reset();
-            spawnGhosts(2);
+            spawnGhosts(UnityEngine.Random.Range(1,3));
             return true;
         } else {
             //maybe loose points?

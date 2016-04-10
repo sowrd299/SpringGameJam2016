@@ -8,7 +8,7 @@ public class BonusGhost : Ghost {  //its funny because they are actually bad thi
     */
 
     public int pointsValue = -20; //public for unity; do not access
-    public new int PointsValue {
+    public override int PointsValue {
         get { return pointsValue; }
     }
 
