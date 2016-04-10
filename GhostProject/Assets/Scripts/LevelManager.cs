@@ -80,8 +80,10 @@ public class LevelManager : MonoBehaviour {
         var typesFound = new HashSet<int>();
         GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Ghost");
         foreach(GameObject ghost in ghosts) {
+            Debug.Log(ghost);
             typesFound.Add(ghost.GetComponent<Ghost>().Type);
         }
+        Debug.Log("Found " + typesFound.Count + " types.");
         return MyUnityTools.ToArray(typesFound);
     }
 
@@ -140,7 +142,10 @@ public class LevelManager : MonoBehaviour {
             targetType = legalTypes[0];
         } else {
             do {
-                targetType = legalTypes[Random.Range(0, legalTypes.Length-1)];
+                int index = Random.Range(0, legalTypes.Length);
+                Debug.Log("Selecting " + index + " of " + legalTypes.Length);
+                targetType = legalTypes[index];
+                Debug.Log(targetType);
             } while (targetType == this.targetType);
         }
         //apply that type 
