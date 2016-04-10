@@ -118,7 +118,7 @@ public class LevelManager : MonoBehaviour {
         Debug.Log("Het is wel aan het starten!");
         spawnGhosts(startingGhosts);
         MyUnityTools.dflt(ref hud, "TopBar");
-        reset();
+        MyUnityTools.dflt(ref pointsPopup, "PointsPopup");
         Debug.Log("Het is nog steds aan het starten!");
         //because gamejam;
         typeIcons = new Sprite[baseNumTypes] {
@@ -129,6 +129,7 @@ public class LevelManager : MonoBehaviour {
                 chefSprt,
                 cowSprt
         };
+        reset();
     }
 	
 	// Update is called once per frame
