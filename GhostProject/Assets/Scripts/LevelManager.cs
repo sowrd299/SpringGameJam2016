@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject ghostPrefab; //public for unity; do not access
 
     public TopBar hud;
+    public PointsPopup pointsPopup;
 
     //SCORE
     private int score = 0;
@@ -63,6 +64,7 @@ public class LevelManager : MonoBehaviour {
         //Check what type of ghost, if it is the correct type send it to work and add points, if it is incorrect deduct points
         if(g.Type == targetType) {
             scorePoints(g.PointsValue);
+            pointsPopup.score(g.PointsValue, Camera.main.WorldToScreenPoint(g.transform.position), hud.timerText.color);
             reset();
             spawnGhosts(2);
             return true;

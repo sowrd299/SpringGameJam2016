@@ -24,7 +24,7 @@ public class Splash : MonoBehaviour {
     void Awake() {
         
         //ignor that this is in Dutch...
-        Debug.Log("Het is wel aan het starten!");
+        //Debug.Log("Het is wel aan het starten!");
 
         //defaults for variables
         MyUnityTools.dflt(ref text, "SplashText");
@@ -35,23 +35,23 @@ public class Splash : MonoBehaviour {
     void Start(){
     */
         //become invisible
-        Debug.Log("Turning splash elements off.");
+        //Debug.Log("Turning splash elements off.");
         image.gameObject.SetActive(false);
         text.gameObject.SetActive(false);
-        Debug.Log("Splash elemenents are " + image.gameObject.activeSelf.ToString() + "," + text.gameObject.activeSelf.ToString());
+        //Debug.Log("Splash elemenents are " + image.gameObject.activeSelf.ToString() + "," + text.gameObject.activeSelf.ToString());
     }
 
     public void Update() {
         if (current != null) {
-            Debug.Log("Running the splash");
+            //Debug.Log("Running the splash");
             size += (endSize - startSize) / steps;
             alpha += (endAlpha - startAlpha) / steps;
             Color c = color;
             c.a = alpha;
             current.color = c;
-            Debug.Log("Alpha  is "+current.color.a);
+            //Debug.Log("Alpha  is "+current.color.a);
             current.rectTransform.localScale = new Vector3(size, size, size);
-            Debug.Log(text.rectTransform.localScale.x);
+            //Debug.Log(text.rectTransform.localScale.x);
             if(Math.Sign(alpha-endAlpha) != Math.Sign(startAlpha-endAlpha) ||
                Math.Sign(size-endSize) != Math.Sign(startSize-endSize)) {
                 //stop running when apropriate
