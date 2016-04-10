@@ -2,11 +2,14 @@
 
 public class GhostZone : MonoBehaviour
 {
+
+    public LevelManager lm;
     public static bool tobii = false;
     bool mouse = false;
 
-    protected void Start()
+    protected void Awake()
     {
+        MyUnityTools.dflt(ref lm, "LevelController");
     }
 
     protected void Update()
@@ -14,6 +17,9 @@ public class GhostZone : MonoBehaviour
         if (tobii && GetComponent<GazeAwareComponent>().HasGaze || mouse)
         {
             GetComponent<Animator>().Play("front");
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                GetComponent<Ghost>().select();
+            }
         }
         else
         {
