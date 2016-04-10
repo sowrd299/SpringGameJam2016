@@ -37,7 +37,7 @@ public class Ghost : MonoBehaviour {
         init(t, pos, pos);
     }
 
-    public void init(int type, Vector2 minPos, Vector2 maxPos) {
+    public virtual void init(int type, Vector2 minPos, Vector2 maxPos) {
         MyUnityTools.dflt(ref lm, "LevelController");
         //pseudo-constructor
         //initialize a newly spawned ghost from script

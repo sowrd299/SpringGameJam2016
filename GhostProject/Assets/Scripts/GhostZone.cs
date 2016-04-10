@@ -25,13 +25,25 @@ public class GhostZone : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) {
                 GetComponent<Ghost>().select();
             }
+            playFront();
         }
         else
         {
-            GetComponent<Animator>().Play("back");
+            playBack();
         }
 
         if (fading) { lerpAlpha();  }
+    }
+
+    protected virtual void playFront() {
+        GetComponent<Animator>().Play(GetComponent<Ghost>().Type.ToString());
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            GetComponent<Ghost>().select();
+        }
+    }
+
+    protected virtual void playBack() {
+        GetComponent<Animator>().Play("back");
     }
 
     void OnMouseEnter()
