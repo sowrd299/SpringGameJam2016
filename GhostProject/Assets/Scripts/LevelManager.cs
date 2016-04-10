@@ -8,7 +8,11 @@ public class LevelManager : MonoBehaviour {
     central game logic
     */
 
+    //images
     public Sprite policeSprt;
+    public Sprite magicSprt;
+    public Sprite construcSprt;
+    public Sprite armySprt;
 
     public int startingGhosts; //number of ghosts to start with
     public GameObject ghostPrefab; //public for unity; do not access
@@ -33,8 +37,8 @@ public class LevelManager : MonoBehaviour {
     public static readonly Color[] typeColors = new Color[baseNumTypes] {
              new Color(49/255f,246/255f,255/255f), //cyan
              new Color(255/255f,11/255f,188/255f), //magenta
-             new Color(11/255f,255/255f,78/255f), //yellow
-             new Color(248/255f,255/255f,49/255f), //mint
+             new Color(248/255f,255/255f,49/255f), //yellow
+             new Color(11/255f,255/255f,78/255f), //mint
              new Color(89/255f,49/255f,246/255f), //purple
              new Color(255/255f,162/255f,56/255f) //peach
     };
@@ -113,11 +117,11 @@ public class LevelManager : MonoBehaviour {
         //because gamejam;
         typeIcons = new Sprite[baseNumTypes] {
                 policeSprt,//Resources.Load<Sprite>("Sprites/ghost_police_hat"), //cyan
-                null, //magenta, soon to be magitian
-                Resources.Load<Sprite>("Sprites/ghost_construction_hat"), //yellow
-                Resources.Load<Sprite>("Sprites/ghost_soldier_hat"), //green
-                null, //purple
-                null //peach
+                magicSprt,
+                construcSprt,
+                armySprt,
+                null,
+                null
         };
     }
 	
