@@ -16,6 +16,7 @@ public class GhostZone : MonoBehaviour
     {
         if (tobii && GetComponent<GazeAwareComponent>().HasGaze || mouse)
         {
+            Debug.Log("Interacting with a ghost!");
             GetComponent<Animator>().Play("front");
             if (Input.GetKeyDown(KeyCode.Space)) {
                 GetComponent<Ghost>().select();

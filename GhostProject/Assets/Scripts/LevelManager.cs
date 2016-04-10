@@ -55,17 +55,20 @@ public class LevelManager : MonoBehaviour {
         spawn an individual ghost
         */
         GameObject g = Instantiate(ghostPrefab);
-        g.GetComponent<Ghost>().init(Random.Range(0,NumTypes),LevelMin,LevelMax);
+        g.GetComponent<Ghost>().init(Random.Range(0,NumTypes),LevelMin,LevelMax,this);
     }
 
-    public void selectGhost(Ghost g) { //to be called by the ghosts themselves
+
+    public bool selectGhost(Ghost g) { //to be called by the ghosts themselves
         //Check what type of ghost, if it is the correct type send it to work and add points, if it is incorrect deduct points
         if(g.Type == targetType) {
             scorePoints(g.PointsValue);
             reset();
             spawnGhosts(2);
+            return true;
         } else {
             //maybe loose points?
+            return false;
         }
         //g.destroy();
     }

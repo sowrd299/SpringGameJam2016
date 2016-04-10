@@ -28,6 +28,11 @@ public class Ghost : MonoBehaviour {
         get { return pointsValue;  }
     }
 
+    public void init(int t, Vector2 pMi, Vector2 pMa, LevelManager lm) {
+        init(t, pMi, pMa);
+        this.lm = lm;
+    }
+
     public void init(int t, Vector2 pos) {
         init(t, pos, pos);
     }
@@ -45,8 +50,7 @@ public class Ghost : MonoBehaviour {
         /*
         what happens when the ghost gets booped
         */
-        lm.selectGhost(this);
-        destroy();
+        if(lm.selectGhost(this)) destroy();
     }
 
     public void destroy() {
