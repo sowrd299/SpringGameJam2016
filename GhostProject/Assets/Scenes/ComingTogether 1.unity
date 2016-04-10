@@ -170,6 +170,8 @@ MonoBehaviour:
   magicSprt: {fileID: 21300000, guid: 4be878e387261b640b22ee39aea6dffc, type: 3}
   construcSprt: {fileID: 21300000, guid: f32f036e6fe693741b3355315973eee5, type: 3}
   armySprt: {fileID: 21300000, guid: 056e6772d3d008f4d9ff8bdad2260a13, type: 3}
+  chefSprt: {fileID: 21300000, guid: 36311e95894da79478bc22966107774c, type: 3}
+  cowSprt: {fileID: 21300000, guid: 68064aa167bf1db41afd869820188489, type: 3}
   startingGhosts: 5
   ghostPrefab: {fileID: 118036, guid: 0ed830e8933bb8740a0d08269d6625af, type: 2}
   daemonGhostPrefab: {fileID: 184974, guid: c2920403fbf2e074598bf709abfe7214, type: 2}

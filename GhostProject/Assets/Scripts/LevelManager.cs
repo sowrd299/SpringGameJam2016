@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour {
     public Sprite magicSprt;
     public Sprite construcSprt;
     public Sprite armySprt;
+    public Sprite chefSprt;
+    public Sprite cowSprt;
 
     public int startingGhosts; //number of ghosts to start with
     public GameObject ghostPrefab; //public for unity; do not access
@@ -124,8 +126,8 @@ public class LevelManager : MonoBehaviour {
                 magicSprt,
                 construcSprt,
                 armySprt,
-                null,
-                null
+                chefSprt,
+                cowSprt
         };
     }
 	
