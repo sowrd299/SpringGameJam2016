@@ -86,6 +86,9 @@ public class LevelManager : MonoBehaviour {
         if (timeLeft < 0) {
             GameOver();
         }
+        //and not, for the world's jankiest fix:
+        //if it seems too fade too fast on you computer, comment it out
+        hud.splash.Update();
 	}
 
     void scorePoints(int points) {
