@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   policeSprt: {fileID: 21300000, guid: d19a1b45f896948438160ba0b57b2afe, type: 3}
-  magicSprt: {fileID: 0}
+  magicSprt: {fileID: 21300000, guid: 4be878e387261b640b22ee39aea6dffc, type: 3}
   construcSprt: {fileID: 21300000, guid: f32f036e6fe693741b3355315973eee5, type: 3}
   armySprt: {fileID: 21300000, guid: 056e6772d3d008f4d9ff8bdad2260a13, type: 3}
   startingGhosts: 5
