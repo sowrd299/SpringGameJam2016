@@ -122,12 +122,12 @@ public class LevelManager : MonoBehaviour {
         Debug.Log("Het is nog steds aan het starten!");
         //because gamejam;
         typeIcons = new Sprite[baseNumTypes] {
-                policeSprt,//Resources.Load<Sprite>("Sprites/ghost_police_hat"), //cyan
-                magicSprt,
-                construcSprt,
-                armySprt,
-                chefSprt,
-                cowSprt
+                policeSprt,//Resources.Load<Sprite>("Sprites/ghost_police_hat"), //cyan //0
+                magicSprt, //1
+                construcSprt, //2
+                armySprt, //3
+                chefSprt, //4
+                cowSprt //5
         };
         reset();
     }
