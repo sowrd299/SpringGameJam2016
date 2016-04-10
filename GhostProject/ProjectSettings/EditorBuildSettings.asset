@@ -11,7 +11,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Alyssa Menu.unity
   - enabled: 0
     path: Assets/Scenes/Alyssa Menu.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RNW_Menu.unity
   - enabled: 0
     path: Assets/Scenes/UI.unity
@@ -19,5 +19,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ComingTogether.unity
   - enabled: 0
     path: Assets/Scenes/ComingTogether 1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AlyssaNewTestScene.unity
+  - enabled: 1
+    path: Assets/Scenes/AlyssaBESTTestScene.unity

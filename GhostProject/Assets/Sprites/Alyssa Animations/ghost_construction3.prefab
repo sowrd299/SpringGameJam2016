@@ -15,8 +15,8 @@ GameObject:
   - 60: {fileID: 6063850}
   - 114: {fileID: 11401696}
   - 114: {fileID: 11455776}
-  - 114: {fileID: 11476868}
-  - 114: {fileID: 11466490}
+  - 114: {fileID: 11484104}
+  - 114: {fileID: 11412124}
   m_Layer: 0
   m_Name: ghost_construction3
   m_TagString: Untagged
@@ -254,9 +254,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 153186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e651c2204c640f4092b0b113af02cf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 90dc634458de5e943b16877d95ac7f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11412124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7d233e077faa84799a5bb2e72a7367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lm: {fileID: 0}
+  fading: 0
 --- !u!114 &11455776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -265,11 +278,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 153186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a098cdaf6b0d724a924f30b4dfe71ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 828b5cfc26a078749b53be6d2f2754c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lm: {fileID: 0}
---- !u!114 &11466490
+--- !u!114 &11484104
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -277,20 +290,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 153186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf5664c980f9434e9ad1ddf0067b9ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lm: {fileID: 0}
-  fading: 0
---- !u!114 &11476868
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ec417bcb402454fa77688dde98d893, type: 3}
+  m_Script: {fileID: 11500000, guid: ebecb9fabb05fb64eb1721b09f2add5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maskType: 0
@@ -322,7 +322,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84c97af0c3b3de849823a8e94a2e883c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47edf8f72ea1e59418984c2f70fe6866, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

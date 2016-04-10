@@ -3,19 +3,28 @@ using System.Collections;
 
 public class UIButtonController : MonoBehaviour {
 
-	public void LoadLevelTobii(int index)
+    public Transform mainCanvas;
+    public Transform instructionsCanvas;
+
+	public void SelectTobii(int index)
     {
         GhostZone.tobii = true;
-        LoadLevel(index);
+        dispInstructions();
     }
 
-    public void LoadLevelMouse(int index)
+    public void SelectMouse(int index)
     {
         GhostZone.tobii = false;
-        LoadLevel(index);
+        dispInstructions();
     }
 
     public void LoadLevel(int index) {
         Application.LoadLevel(index);
+    }
+
+    public void dispInstructions()
+    {
+        mainCanvas.gameObject.SetActive(false);
+        instructionsCanvas.gameObject.SetActive(true);
     }
 }

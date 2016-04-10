@@ -12,11 +12,11 @@ GameObject:
   - 95: {fileID: 9566572}
   - 114: {fileID: 11431066}
   - 114: {fileID: 11416486}
-  - 114: {fileID: 11498024}
-  - 114: {fileID: 11411450}
   - 50: {fileID: 5063878}
   - 58: {fileID: 5863976}
   - 60: {fileID: 6097420}
+  - 114: {fileID: 11401114}
+  - 114: {fileID: 11486766}
   m_Layer: 0
   m_Name: ghost_chef1
   m_TagString: Untagged
@@ -268,7 +268,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11411450
+--- !u!114 &11401114
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -276,9 +276,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 103880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e651c2204c640f4092b0b113af02cf3, type: 3}
+  m_Script: {fileID: 11500000, guid: ebecb9fabb05fb64eb1721b09f2add5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maskType: 0
+  showProjectedBounds: 0
+  delayInMilliseconds: 0
 --- !u!114 &11416486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,12 +290,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 103880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ec417bcb402454fa77688dde98d893, type: 3}
+  m_Script: {fileID: 11500000, guid: 828b5cfc26a078749b53be6d2f2754c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maskType: 0
-  showProjectedBounds: 0
-  delayInMilliseconds: 0
+  lm: {fileID: 0}
 --- !u!114 &11431066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,11 +302,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 103880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a098cdaf6b0d724a924f30b4dfe71ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 90dc634458de5e943b16877d95ac7f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lm: {fileID: 0}
---- !u!114 &11498024
+--- !u!114 &11486766
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 103880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf5664c980f9434e9ad1ddf0067b9ef, type: 3}
+  m_Script: {fileID: 11500000, guid: ed7d233e077faa84799a5bb2e72a7367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lm: {fileID: 0}
@@ -344,7 +344,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 76eabb943a83bf34a96f25ed9bb155af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b768bb9290cd91345a4279a1b129182d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
