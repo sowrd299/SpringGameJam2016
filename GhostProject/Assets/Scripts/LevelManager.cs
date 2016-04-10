@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class LevelManager : MonoBehaviour {
 
     /*
     central game logic
     */
+
+    //images
+    public Sprite policeSprt;
+    public Sprite magicSprt;
+    public Sprite construcSprt;
+    public Sprite armySprt;
 
     public int startingGhosts; //number of ghosts to start with
     public GameObject ghostPrefab; //public for unity; do not access
@@ -28,13 +35,15 @@ public class LevelManager : MonoBehaviour {
         //increases with level
         get { return baseNumTypes - 2 + score/25; }
     }
-    public static readonly Color[] typeColors = new Color[baseNumTypes]
-            {new Color(49/255f,246/255f,255/255f), //cyan
+    public static readonly Color[] typeColors = new Color[baseNumTypes] {
+             new Color(49/255f,246/255f,255/255f), //cyan
              new Color(255/255f,11/255f,188/255f), //magenta
-             new Color(11/255f,255/255f,78/255f), //yellow
-             new Color(248/255f,255/255f,49/255f), //mint
+             new Color(248/255f,255/255f,49/255f), //yellow
+             new Color(11/255f,255/255f,78/255f), //mint
              new Color(89/255f,49/255f,246/255f), //purple
-             new Color(255/255f,162/255f,56/255f) }; //peach
+             new Color(255/255f,162/255f,56/255f) //peach
+    };
+    public static Sprite[] typeIcons;
     private int targetType; //stores the target type as int
     public int TargetType {
         get { return targetType; }
@@ -65,12 +74,12 @@ public class LevelManager : MonoBehaviour {
         //chance of creating a deamon ghost slowly increases with time
         int chance = 9 + score / 5;
         if (chance > 20) chance = 20;
-        if (Random.Range(0,9+score/5) > 10) {
+        if (UnityEngine.Random.Range(0,9+score/5) > 10) {
             g = Instantiate(daemonGhostPrefab);
         } else {
             g = Instantiate(ghostPrefab);
         }
-        g.GetComponent<Ghost>().init(Random.Range(0,NumTypes),LevelMin,LevelMax,this);
+        g.GetComponent<Ghost>().init(UnityEngine.Random.Range(0,NumTypes),LevelMin,LevelMax,this);
     }
 
     int[] presentTypes() {
@@ -109,7 +118,16 @@ public class LevelManager : MonoBehaviour {
         MyUnityTools.dflt(ref hud, "TopBar");
         reset();
         Debug.Log("Het is nog steds aan het starten!");
-	}
+        //because gamejam;
+        typeIcons = new Sprite[baseNumTypes] {
+                policeSprt,//Resources.Load<Sprite>("Sprites/ghost_police_hat"), //cyan
+                magicSprt,
+                construcSprt,
+                armySprt,
+                null,
+                null
+        };
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -135,17 +153,14 @@ public class LevelManager : MonoBehaviour {
         //reset the time
         timeLeft = baseTimeToFind - score / 15; //time encroaches downward as time progress
         if (timeLeft < 4f) timeLeft = 4f; //mimimum time; improve implementation 
-        //generate a new random target type that is not the same one
+        //generate a new randome target type that is not the same one
         int targetType;
         int[] legalTypes = presentTypes();
         if (legalTypes.Length == 1) {
             targetType = legalTypes[0];
         } else {
             do {
-                int index = Random.Range(0, legalTypes.Length);
-                Debug.Log("Selecting " + index + " of " + legalTypes.Length);
-                targetType = legalTypes[index];
-                Debug.Log(targetType);
+                targetType = legalTypes[UnityEngine.Random.Range(0, legalTypes.Length)];
             } while (targetType == this.targetType);
         }
         //apply that type 
@@ -158,7 +173,9 @@ public class LevelManager : MonoBehaviour {
         //display type-relevent information to the hud
         Debug.Log("Displaying type " + t.ToString());
         hud.setColor(typeColors[t]);
-        //hud.setTypeIcon(typeIcons[t]);
+        try {
+            hud.setTypeIcon(typeIcons[t]);
+        } catch (NullReferenceException) {}
     }
 
     void GameOver() {

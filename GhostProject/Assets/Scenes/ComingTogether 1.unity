@@ -166,6 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a24fc4c10561f488b48a1ee9030727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  policeSprt: {fileID: 21300000, guid: d19a1b45f896948438160ba0b57b2afe, type: 3}
+  magicSprt: {fileID: 21300000, guid: 4be878e387261b640b22ee39aea6dffc, type: 3}
+  construcSprt: {fileID: 21300000, guid: f32f036e6fe693741b3355315973eee5, type: 3}
+  armySprt: {fileID: 21300000, guid: 056e6772d3d008f4d9ff8bdad2260a13, type: 3}
   startingGhosts: 5
   ghostPrefab: {fileID: 118036, guid: 0ed830e8933bb8740a0d08269d6625af, type: 2}
   daemonGhostPrefab: {fileID: 184974, guid: c2920403fbf2e074598bf709abfe7214, type: 2}
@@ -406,8 +410,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 32, y: 32}
+  m_AnchoredPosition: {x: -17, y: 0}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &485657864
 MonoBehaviour:
@@ -428,8 +432,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: f32f036e6fe693741b3355315973eee5, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -462,7 +466,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485657862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
