@@ -2,6 +2,8 @@
 
 public class GhostZone : MonoBehaviour
 {
+    public static bool tobii = false;
+    bool mouse = false;
 
     protected void Start()
     {
@@ -9,13 +11,29 @@ public class GhostZone : MonoBehaviour
 
     protected void Update()
     {
-        if (GetComponent<GazeAwareComponent>().HasGaze)
+        if (tobii && GetComponent<GazeAwareComponent>().HasGaze || mouse)
         {
             GetComponent<Animator>().Play("front");
         }
         else
         {
             GetComponent<Animator>().Play("back");
+        }
+    }
+
+    void OnMouseEnter()
+    {
+        if (!tobii)
+        {
+            mouse = true;
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (!tobii)
+        {
+            mouse = false;
         }
     }
 }
